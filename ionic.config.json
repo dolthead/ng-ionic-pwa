@@ -1,0 +1,7 @@
+{
+  "name": "ng-pwa-jan25",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
