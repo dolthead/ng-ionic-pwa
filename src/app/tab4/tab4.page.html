@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Camera
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <ion-button expand="block" (click)="takePicture()">Take Picture</ion-button>
+  <br>
+  <img id="photo" />
+
+</ion-content>

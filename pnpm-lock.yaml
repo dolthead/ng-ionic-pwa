@@ -44,6 +44,9 @@ importers:
       '@capacitor/app':
         specifier: 7.1.0
         version: 7.1.0(@capacitor/core@7.4.3)
+      '@capacitor/camera':
+        specifier: ^7.0.2
+        version: 7.0.2(@capacitor/core@7.4.3)
       '@capacitor/clipboard':
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.3)
@@ -65,6 +68,9 @@ importers:
       '@ionic/angular':
         specifier: ^8.7.4
         version: 8.7.4(cb4dc333be15c49f0a00922a0e4aa770)
+      '@ionic/pwa-elements':
+        specifier: ^3.3.0
+        version: 3.3.0
       cordova-plugin-badge:
         specifier: ^0.8.9
         version: 0.8.9
@@ -1004,6 +1010,11 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=7.0.0'
 
+  '@capacitor/camera@7.0.2':
+    resolution: {integrity: sha512-1/UbZZ8MSbRTMMvjQHQFJ0cs2ZNURNoyuUex0rAJwECsyHO0I5SRvu7YoMY5qTcRWScBcqT+3QZcJvETtRg7ug==}
+    peerDependencies:
+      '@capacitor/core': '>=7.0.0'
+
   '@capacitor/cli@7.4.3':
     resolution: {integrity: sha512-SWozpdDgrbQ/ry1nIapugDFvE9z+l22BmU/+fpgL2Zv5487hGdXvCX5+1SluuFBP3IPpx6b4LjsKnBigyJoUWg==}
     engines: {node: '>=20.0.0'}
@@ -1429,6 +1440,10 @@ packages:
 
   '@ionic/core@8.7.4':
     resolution: {integrity: sha512-ZCJYKLWdxq+x4OmEDvodqR+y/FSDJYkkFHozWe1+b/p0l9lNN13lLuSZVs0AEOgPtO89Atl67rTbpGE2ad/SCw==}
+
+  '@ionic/pwa-elements@3.3.0':
+    resolution: {integrity: sha512-vbykpxd2nGRlA67AnqDwsiVf8PUmInLyi6lQdnPDjeiML1WZa0CPe6r632nGDV9PTi+sWNde9Xexg9SD6Pwyqw==}
+    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
 
   '@ionic/utils-array@2.1.6':
     resolution: {integrity: sha512-0JZ1Zkp3wURnv8oq6Qt7fMPo5MpjbLoUoa9Bu2Q4PJuSDWM8H8gwF3dQO7VTeUj3/0o1IB1wGkFWZZYgUXZMUg==}
@@ -6749,6 +6764,10 @@ snapshots:
     dependencies:
       '@capacitor/core': 7.4.3
 
+  '@capacitor/camera@7.0.2(@capacitor/core@7.4.3)':
+    dependencies:
+      '@capacitor/core': 7.4.3
+
   '@capacitor/cli@7.4.3':
     dependencies:
       '@ionic/cli-framework-output': 2.2.8
@@ -7119,6 +7138,8 @@ snapshots:
       '@stencil/core': 4.36.2
       ionicons: 8.0.13
       tslib: 2.8.1
+
+  '@ionic/pwa-elements@3.3.0': {}
 
   '@ionic/utils-array@2.1.6':
     dependencies:
