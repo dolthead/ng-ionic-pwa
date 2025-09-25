@@ -6,8 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding" [fullscreen]="true">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-input type="number" [(ngModel)]="badgeCount" label="Badge Count" labelPlacement="stacked"></ion-input>
+  <ion-button expand="block" (click)="setBadgeCount(badgeCount)">Set Badge Count</ion-button>
+  <ion-button expand="block" (click)="setBadgeCount(0)">Reset</ion-button>
 
 </ion-content>

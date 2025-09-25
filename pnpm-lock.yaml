@@ -35,6 +35,12 @@ importers:
       '@angular/service-worker':
         specifier: ^20.3.1
         version: 20.3.1(@angular/core@20.3.1(@angular/compiler@20.3.1)(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
+      '@awesome-cordova-plugins/badge':
+        specifier: ^8.1.0
+        version: 8.1.0(@awesome-cordova-plugins/core@8.1.0(rxjs@7.8.2))(rxjs@7.8.2)
+      '@awesome-cordova-plugins/core':
+        specifier: ^8.1.0
+        version: 8.1.0(rxjs@7.8.2)
       '@capacitor/app':
         specifier: 7.1.0
         version: 7.1.0(@capacitor/core@7.4.3)
@@ -59,6 +65,9 @@ importers:
       '@ionic/angular':
         specifier: ^8.7.4
         version: 8.7.4(cb4dc333be15c49f0a00922a0e4aa770)
+      cordova-plugin-badge:
+        specifier: ^0.8.9
+        version: 0.8.9
       ionicons:
         specifier: ^7.4.0
         version: 7.4.0
@@ -469,6 +478,17 @@ packages:
     peerDependencies:
       '@angular/core': 20.3.1
       rxjs: ^6.5.3 || ^7.4.0
+
+  '@awesome-cordova-plugins/badge@8.1.0':
+    resolution: {integrity: sha512-goy4HCCZWmJC8ZifNcCeliUxfogtqs32IBn9K4hxk+lLi8DEfciS0tBdsxs72oDTUdA96RSYY5sRDAuZLl+RHw==}
+    peerDependencies:
+      '@awesome-cordova-plugins/core': ^8.0.2
+      rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
+
+  '@awesome-cordova-plugins/core@8.1.0':
+    resolution: {integrity: sha512-7NkUC2FcXSlIuIH2xc1miIdN8/by2uewrIg5JBWauN1KCzCXLhCwZ39C8nBsWxCloAxCvec+MMU5SzJGGWfjTg==}
+    peerDependencies:
+      rxjs: ^5.5.0 || ^6.5.0 || ^7.3.0
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -2145,6 +2165,9 @@ packages:
   '@types/connect@3.4.38':
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
 
+  '@types/cordova@11.0.3':
+    resolution: {integrity: sha512-kyuRQ40/NWQVhqGIHq78Ehu2Bf9Mlg0LhmSmis6ZFJK7z933FRfYi8tHe/k/0fB+PGfCf95rJC6TO7dopaFvAg==}
+
   '@types/cors@2.8.19':
     resolution: {integrity: sha512-mFNylyeyqN93lfe/9CSxOGREz8cpzAhH+E93xJ4xWQf62V8sQ/24reV2nyzUWM6H6Xji+GGHpkbLe7pVoUEskg==}
 
@@ -2776,6 +2799,10 @@ packages:
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       webpack: ^5.1.0
+
+  cordova-plugin-badge@0.8.9:
+    resolution: {integrity: sha512-oVv+z3B7Jgi7/gnE/jvSnjBsBNwZVoLmJYwTUw3nLmp50fnY22H7NWthTachEdle2EljDk8AzvhuDpdf0triIw==}
+    engines: {'0': {name: cordova, version: '>=6.0.0'}, '1': {name: apple-ios, version: '>=10.0.0'}, '2': {name: cordova-android, version: '>=4'}, '3': {name: cordova-plugman, version: '>=4.2.0'}}
 
   core-js-compat@3.45.1:
     resolution: {integrity: sha512-tqTt5T4PzsMIZ430XGviK4vzYSoeNJ6CXODi6c/voxOT6IZqBht5/EKaSNnYiEjjRYxjVz7DQIsOsY0XNi8PIA==}
@@ -6008,6 +6035,17 @@ snapshots:
       rxjs: 7.8.2
       tslib: 2.8.1
 
+  '@awesome-cordova-plugins/badge@8.1.0(@awesome-cordova-plugins/core@8.1.0(rxjs@7.8.2))(rxjs@7.8.2)':
+    dependencies:
+      '@awesome-cordova-plugins/core': 8.1.0(rxjs@7.8.2)
+      '@types/cordova': 11.0.3
+      rxjs: 7.8.2
+
+  '@awesome-cordova-plugins/core@8.1.0(rxjs@7.8.2)':
+    dependencies:
+      '@types/cordova': 11.0.3
+      rxjs: 7.8.2
+
   '@babel/code-frame@7.27.1':
     dependencies:
       '@babel/helper-validator-identifier': 7.27.1
@@ -7754,6 +7792,8 @@ snapshots:
     dependencies:
       '@types/node': 24.5.2
 
+  '@types/cordova@11.0.3': {}
+
   '@types/cors@2.8.19':
     dependencies:
       '@types/node': 24.5.2
@@ -8507,6 +8547,8 @@ snapshots:
       serialize-javascript: 6.0.2
       tinyglobby: 0.2.15
       webpack: 5.101.2(esbuild@0.25.9)
+
+  cordova-plugin-badge@0.8.9: {}
 
   core-js-compat@3.45.1:
     dependencies:
