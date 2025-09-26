@@ -9,6 +9,7 @@ import {
   IonInput,
   ModalController,
   AlertController,
+  ToastController,
 } from '@ionic/angular/standalone';
 import { Badge } from '@awesome-cordova-plugins/badge/ngx';
 import { MoreInformationPage } from '../more-information/more-information.page';
@@ -32,12 +33,21 @@ export class Tab1Page {
   badgeCount: number = 3;
   infoModal: ModalController = inject(ModalController);
   alertController: AlertController = inject(AlertController);
+  toastController: ToastController = inject(ToastController);
 
   constructor() {}
 
   ngOnInit() {
     this.badge.set(this.badgeCount);
   }
+
+  showToast = async () => {
+    const toast = await this.toastController.create({
+      message: 'This is a toast message.',
+      duration: 2000,
+    });
+    toast.present();
+  };
 
   openAlert = async () => {
     const alert = await this.alertController.create({
