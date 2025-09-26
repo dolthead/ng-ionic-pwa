@@ -9,7 +9,12 @@
 <ion-content class="ion-padding" [fullscreen]="true">
 
   <ion-input type="number" [(ngModel)]="badgeCount" label="Badge Count" labelPlacement="stacked"></ion-input>
-  <ion-button expand="block" (click)="setBadgeCount(badgeCount)">Set Badge Count</ion-button>
+  <ion-button class="red-button" expand="block" (click)="setBadgeCount(badgeCount)">Set Badge Count</ion-button>
   <ion-button expand="block" (click)="setBadgeCount(0)">Reset</ion-button>
+  <br>
+  <br>
+  <ion-button expand="block" (click)="openMoreInformation()">More Information</ion-button>
+  <br>
+  <ion-button expand="block" (click)="openAlert()">Open Alert</ion-button>
 
 </ion-content>

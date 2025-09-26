@@ -1,23 +1,75 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonInput } from '@ionic/angular/standalone';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButton,
+  IonInput,
+  ModalController,
+  AlertController,
+} from '@ionic/angular/standalone';
 import { Badge } from '@awesome-cordova-plugins/badge/ngx';
+import { MoreInformationPage } from '../more-information/more-information.page';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonInput, FormsModule],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonButton,
+    IonInput,
+    FormsModule,
+  ],
 })
 export class Tab1Page {
   badge: Badge = new Badge();
   badgeCount: number = 3;
+  infoModal: ModalController = inject(ModalController);
+  alertController: AlertController = inject(AlertController);
 
   constructor() {}
 
   ngOnInit() {
     this.badge.set(this.badgeCount);
   }
+
+  openAlert = async () => {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'This is an alert message.',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+        },
+      ],
+    });
+
+    alert.present();
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  };
+
+  openMoreInformation = async () => {
+    const modal = await this.infoModal.create({
+      component: MoreInformationPage,
+      initialBreakpoint: 0.75,
+      breakpoints: [0.75, 1],
+      expandToScroll: false,
+    });
+    return await modal.present();
+  };
 
   setBadgeCount(count: number) {
     // use plugin

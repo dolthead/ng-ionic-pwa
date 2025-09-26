@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>More Information</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="infoModal.dismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<br>
+<br><br><br>
+  <ion-button expand="block" (click)="infoModal.dismiss()">Close</ion-button>
+
+</ion-content>
