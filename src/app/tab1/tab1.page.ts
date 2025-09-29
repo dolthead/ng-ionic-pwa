@@ -41,6 +41,32 @@ export class Tab1Page {
     this.badge.set(this.badgeCount);
   }
 
+  setBadgeCount(count: number) {
+    // use plugin
+    this.badgeCount = count;
+    if (this.badgeCount === 0) {
+      this.badge.clear();
+    } else {
+      this.badge.set(this.badgeCount);
+    }
+
+    // notify tabs page
+    const evt = new CustomEvent('badgeCount', { detail: this.badgeCount });
+    window.dispatchEvent(evt);
+
+    // use native api, fallback
+    // if (this.badgeCount === 0 && 'clearAppBadge' in navigator) {
+    //   navigator.clearAppBadge().catch((error) => {
+    //     console.log('Error clearing app badge', error);
+    //   });
+    // }
+    // if ('setAppBadge' in navigator && this.badgeCount > 0) {
+    //   navigator.setAppBadge(this.badgeCount).catch((error) => {
+    //     console.log('Error setting app badge', error);
+    //   });
+    // }
+  }
+
   showToast = async () => {
     const toast = await this.toastController.create({
       message: 'This is a toast message.',
@@ -80,30 +106,4 @@ export class Tab1Page {
     });
     return await modal.present();
   };
-
-  setBadgeCount(count: number) {
-    // use plugin
-    this.badgeCount = count;
-    if (this.badgeCount === 0) {
-      this.badge.clear();
-    } else {
-      this.badge.set(this.badgeCount);
-    }
-
-    // notify tabs page
-    const evt = new CustomEvent('badgeCount', { detail: this.badgeCount });
-    window.dispatchEvent(evt);
-
-    // use native api, fallback
-    if (this.badgeCount === 0 && 'clearAppBadge' in navigator) {
-      navigator.clearAppBadge().catch((error) => {
-        console.log('Error clearing app badge', error);
-      });
-    }
-    if ('setAppBadge' in navigator && this.badgeCount > 0) {
-      navigator.setAppBadge(this.badgeCount).catch((error) => {
-        console.log('Error setting app badge', error);
-      });
-    }
-  }
 }

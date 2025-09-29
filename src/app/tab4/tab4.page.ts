@@ -21,15 +21,15 @@ import {
   ],
 })
 export class Tab4Page {
+
   constructor() {};
 
-
   takePicture = async () => {
-    const imageElement = document.getElementById('image') as HTMLImageElement;
+    // const imageElement = document.getElementById('image') as HTMLImageElement;
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: true,
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.Uri
     });
 
     // image.webPath will contain a path that can be set as an image src.
@@ -39,7 +39,8 @@ export class Tab4Page {
     var imageUrl = image.webPath;
 
     // Can be set to the src of an image now
-    if (imageUrl && imageElement) {
+    const imageElement = document.getElementById('photo') as HTMLImageElement;
+    if (imageElement && imageUrl) {
       imageElement.src = imageUrl;
     }
   };
